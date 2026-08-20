@@ -1,0 +1,59 @@
+name: Publish cp.opensips.org documentation
+
+# The Control Panel's documentation lives on the release branches of this repo,
+# one docs/ per release, and is pulled into cp.opensips.org at build time. A push
+# that touches it therefore has to tell that site to regenerate — this is that
+# telling. Counterpart of opensips' publish-web.yml.
+#
+# The branch IS the release: a push to 9.4.0 regenerates 9.4.0, master feeds the
+# release it is becoming. So there is nothing to detect — the ref names the work.
+#
+# This file has to exist on every branch it should fire from: a push event runs
+# the workflow as it exists on the pushed branch.
+
+on:
+  push:
+    branches:
+      - master
+      - '[0-9]*'
+    paths:
+      - 'docs/**'
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One publish per branch. A second push while the first is still regenerating
+# cancels it — the newer run covers the same branch, including the older commit.
+concurrency:
+  group: publish-cp-web-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dispatch:
+    name: Trigger the Control Panel site publish
+    # Forks have no dispatch credentials; without this every fork push fails.
+    if: github.repository == 'OpenSIPS/opensips-cp'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.OPENSIPS_CP_WEB_APP }}
+          private-key: ${{ secrets.OPENSIPS_CP_WEB_KEY }}
+          owner: OpenSIPS
+          repositories: ${{ secrets.OPENSIPS_CP_WEB_REPO }}
+          permission-actions: write
+
+      - name: Trigger the docs publish
+        uses: step-security/workflow-dispatch@v1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          repo: ${{ secrets.OPENSIPS_CP_WEB_REPO }}
+          workflow: publish.yml
+          ref: main
+          # Regenerate only the branch that changed; the site rebuilds the rest
+          # from the content already on disk.
+          inputs: '{"component": "docs", "branches": "${{ github.ref_name }}"}'
