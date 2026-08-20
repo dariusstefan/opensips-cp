@@ -1,0 +1,21 @@
+---
+title: 'RTPEngine Tool'
+---
+
+## Description
+
+The RTPEngine OCP tool maps on the [RTPEngine OpenSIPS module](https://docs.opensips.org/manual/3-3/modules/rtpengine). It provides provisioning and monitoring capabilities for the list of RTPEngine relays used by OpenSIPS.
+
+The tool provides standard DB operations for the RTPEngine sockets: add, delete, search and listing of the whole content of the table. As all the changes are done in database, to apply them into your OpenSIPS, you need to click on *Reload on Server* button.
+
+Beside the DB operations, the tool also aggregates the runtime status of rtpengine sockets (as internally provided by OpenSIPS via Management Interface). This provides additional information about the rtpengine sockets, as status (enabled, disabled) and recheck ticks. The status can be also be modified from the tool (enabled or disabled).
+
+## Configuration
+
+Tool specific settings are configurable via the setting panel - see gear-icon in the tool header.
+
+All settings are explained via ToolTip and have format validation.
+
+## Screenshots
+
+![RTPEngine](img/rtpengine.jpg)
