@@ -1,0 +1,34 @@
+---
+title: 'Control Panel 7.2.3 documentation'
+version: '7-2-3'
+---
+
+- Global configuration
+  - [Install Guide](install.md)
+  - [Setup & Configuration](configuration.md)
+- Module Configuration - detailed description
+  - Admin Class - Provision the access to Control Panel.
+    - [Add Admin](add_admin.md) - create new administrator users for Control Panel
+    - [List Admin](list_admins.md) - provision access rights (available tools) for each administrator
+  - SIP Users Class - Provision various information related to the OpenSIPS SIP subscribers.
+    - [Provison Users](user_management.md) - create, edit or remove SIP Subscribers (along with their attributes)
+    - [Provison Aliases](alias_management.md) - create, edit or remove SIP Aliases for the SIP Subscribers
+    - [Provison ACLs](acl_management.md) - set/reset permissions (ACLs) for the the SIP Subscribers
+  - System Class - Tools for provisioning various non-subscriber features in OpenSIPS.
+    - [CDR Viewer](cdrviewer.md) - list and search through the CDRs produced by OpenSIPS
+    - [Call Center](callcenter.md) - provision and manage the Call Center module in terms of flows, agents and calls
+    - [Clusterer](clusterer.md) - provision and manage the OpenSIPS built-in Clusterer module
+    - [Dialog](dialog.md) - list ongoing calls and dispaly profile information
+    - [Dialplan](dialplan.md) - provision the Diaplan module, by adding, editing and removing diaplan rules
+    - [Dispatcher](dispatcher.md) - provision and monitor the Dispacher module (dispatching sets and destinations)
+    - [Domains](domains.md) - manage the SIP domains used by OpenSIPS via Domain module
+    - [Dynamic Routing](drouting.md) - provision gateway routing / LCR via routing rules, carriers and gateways
+    - [Homer](homer.md) - integration with the HOMER web portal for SIPCapture-ing
+    - [Load Balancer](loadbalancer.md) - provision and monitor the Load Balancing module
+    - [MI Commands](mi.md) - run OpenSIPS commands via Management Interface
+    - [Monit](monit.md) - integration with the Monit monitoring service
+    - [Permissions](permissions.md) - provision IP based access permissions via Permissions module
+    - [RTPProxy](rtpproxy.md) - provision and manage the RTPproxy instances used by OpenSIPS
+    - [SIPtrace](siptrace.md) - viewer of the SIP data captured via the siptrace module
+    - [Statistics Monitor](smonitor.md) - viewer and charter for the statistics provided by OpenSIPS
+    - [TViewer](tviewer.md) - generic and customizable SQL Table Viewer
