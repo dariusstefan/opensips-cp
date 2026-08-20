@@ -1,0 +1,42 @@
+---
+title: 'Control Panel 9.3.3 documentation'
+version: '9'
+---
+
+- Global configuration
+  - [Install Guide](install.md)
+  - [Setup & Configuration](configuration.md)
+  - [Access Control & Permissions](admins.md)
+  - [OpenSIPS Boxes & Systems](boxes.md)
+- Tools Configuration - detailed description
+  - Dashboard - build dashboard panels with custom widget sets (starting with 9.3.3).
+    - [Dashboard](dashboard.md) - manage dashboard panels with various sets of widgets
+  - SIP Users Section - Provision various information related to the OpenSIPS SIP subscribers.
+    - [Provison Users](user_management.md) - create, edit or remove SIP Subscribers (along with their attributes)
+    - [Provison Aliases](alias_management.md) - create, edit or remove SIP Aliases for the SIP Subscribers
+    - [Provison Groups](group_management.md) - manage group based permissions for the SIP Subscribers
+  - System Section - Tools for provisioning various non-subscriber features in OpenSIPS.
+    - [Addresses](addresses.md) - provision IP based access permissions via Permissions module
+    - [Call Center](callcenter.md) - provision and manage the Call Center module in terms of flows, agents and calls
+    - [CDR Viewer](cdrviewer.md) - list and search through the CDRs produced by OpenSIPS
+    - [Clusterer](clusterer.md) - provision and manage the OpenSIPS built-in Clusterer module
+    - [Dialog](dialog.md) - list ongoing calls and dispaly profile information
+    - [Dialplan](dialplan.md) - provision the Diaplan module, by adding, editing and removing diaplan rules
+    - [Dispatcher](dispatcher.md) - provision and monitor the Dispacher module (dispatching sets and destinations)
+    - [Domains](domains.md) - manage the SIP domains used by OpenSIPS via Domain module
+    - [Dynamic Routing](drouting.md) - provision gateway routing / LCR via routing rules, carriers and gateways
+    - [Keepalived](keepalived.md) - interface for monitoring and switch for KeepAlive daemon (starting with 9.3.3)
+    - [Load Balancer](loadbalancer.md) - provision and monitor the Load Balancing module
+    - [MI Commands](mi.md) - run OpenSIPS commands via Management Interface
+    - [Monit](monit.md) - integration with the Monit monitoring service
+    - [RTPEngine](rtpengine.md) - provision and manage the RTPEngine instances used by OpenSIPS
+    - [RTPProxy](rtpproxy.md) - provision and manage the RTPproxy instances used by OpenSIPS
+    - [SIPtrace](siptrace.md) - viewer of the SIP data captured via the siptrace module
+    - [Statistics Monitor](smonitor.md) - viewer and charter for the statistics provided by OpenSIPS
+    - [Status Report](status_report.md) - access to the reports provided by OpenSIPS's Status-Report identifiers (starting with 9.3.3)
+    - [TCP Management](tcp_mgm.md) - provision per-path TCP settings (timeouts, keepalives, connection reuse) used by OpenSIPS (starting with 9.3.3)
+    - [TLS Management](tls_management.md) - handle the set of TLS certificates used by OpenSIPS (for SIP, DB, WSS, etc)
+    - [UAC registrant](uac_registant.md) - provisioning for Client Registrations of OpenSIPS
+    - [SMPP Gateway](smpp.md) - provisioning of SMS Centers to be used by the OpenSIPS SMPP Gateway
+- Generic Tools Configuration
+  - [TViewer](tviewer.md) - generic framework to provision arbitrary database tables
